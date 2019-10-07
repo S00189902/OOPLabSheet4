@@ -24,7 +24,34 @@ namespace Ex1
             teams.Add(DerryCity);
             teams.Add(Dundalk);
 
-            
+            Display(teams);
+
+            SligoRovers.AddResult(Result.Win);
+            FinnHarps.AddResult(Result.Lose);
+            FinnHarps.AddResult(Result.Draw);
+            GalwayUnited.AddResult(Result.Win);
+            Dundalk.AddResult(Result.Lose);
+
+            Display(teams);
+
+            teams.Sort();
+
+            Display(teams);
+
+            teams.Reverse();
+            Display(teams);
+
+            SligoRovers.Players.Add(new Player() { Name = "John Smith", Position = "Goalie" });
+            SligoRovers.Players.Add(new Player() { Name = "Jordan McGrath", Position = "Defender" });
+
+            Console.WriteLine("\n Sligo Rovers Teamsheet");
+
+            foreach(Player player in SligoRovers.Players)
+            {
+                Console.WriteLine("{0,-17}{1,-8}", player.Name, player.Position);
+            }
+
+
         }
         static void Display(List<Team> teams)
         {
@@ -34,6 +61,7 @@ namespace Ex1
             {
                 Console.WriteLine(team.DisplayTable());
             }
+
         }
     }
 }
